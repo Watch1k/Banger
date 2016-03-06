@@ -1,0 +1,29 @@
+header.header
+	// begin logo
+	.logo
+		a(href="#")
+			img(src="img/logo.png", alt="Top Banger")
+	// end logo
+	// begin main-nav
+	nav.main-nav
+		ul
+			li
+				a(href="#")
+					+icon('babes')
+					| Babes
+			li
+				a(href="#")
+					+icon('lifestyle')
+					| Lifestyle
+			li
+				a(href="#")
+					+icon('entertainment')
+					| Entertainment
+	// end main-nav
+	// begin search
+	.search
+		input(type="text" placeholder="search...").search-inp
+		button.search-btn
+			i.icon
+			| Search
+	// end search

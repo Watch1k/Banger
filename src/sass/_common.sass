@@ -1,0 +1,186 @@
+// fonts
++font("opensans-semibold-webfont", "opensans-semibold-webfont")
++font("opensans-extrabold-webfont", "opensans-extrabold-webfont")
++font("sourcesanspro-semibold-webfont", "sourcesanspro-semibold-webfont")
+$default-fonts: Arial, sans-serif
+=sans-sb
+	font-family: "opensans-semibold-webfont", $default-fonts
+=sans-xb
+	font-family: "opensans-extrabold-webfont", $default-fonts
+=ss-sb
+	font-family: "sourcesanspro-semibold-webfont", $default-fonts
+
+// colors
+$red: #D1221E
+
+/*-------------------------------------------------------------------------*/
+/*----------------------------- MAIN STYLES -------------------------------*/
+/*-------------------------------------------------------------------------*/
+a:hover, a:focus
+	text-decoration: none
+a
+	color: inherit
+	text-decoration: none
+svg
+	width: 100%
+	height: 100%
+.is-hidden
+	display: none
+.row
+	+pie-clearfix
+body
+	min-width: 320px
+	+sans-sb
+	font-size: 16px
+	color: #111
+	line-height: 1.6
+	background-color: #111
+.wrapper
+	overflow: hidden
+	margin: 0 auto
+	max-width: 1190px
+	min-height: 100%
+	padding-bottom: 50px
+.footer
+	margin-top: -50px
+	height: 50px
+	+ss-sb
+	font-size: em(14)
+	line-height: 20px
+	background-color: #fff
+	&-wrap
+		margin: 0 auto
+		max-width: 1190px
+/* HEADER */
+.header
+	position: relative
+	z-index: 1
+	height: 50px
+	line-height: 20px
+	+pie-clearfix
+	.main-nav
+		float: left
+	.logo
+		position: absolute
+		left: 0
+		top: 0
+	.search
+		float: right
+	.icon
+		float: left
+		margin-top: 2px
+		margin-right: 7px
+		width: 20px
+		height: 15px
+		fill: #fff
+		&.icon-babes
+			stroke-width: 12
+			stroke: #fff
+		&.icon-lifestyle
+			stroke-width: 1
+			stroke: #fff
+		&.icon-entertainment
+			stroke-width: 15
+			stroke: #fff
+.main-nav
+	margin-left: 25px + 227px
+	ul
+		+pie-clearfix
+		font-size: em(15)
+		color: #fff
+		text-transform: uppercase
+		li
+			float: left
+			a
+				display: block
+				padding: 15px
+				transition: all 0.2s
+				&:hover
+					background-color: $red
+					transition: all 0.2s
+.logo
+	a
+		display: block
+		img
+			width: 227px
+			height: 123px
+			vertical-align: middle
+.search
+	+ss-sb
+	+pie-clearfix
+	input[type="submit"]
+		// display: none
+	&-inp
+		float: left
+		margin-top: 10px
+		padding: 5px 0
+		width: 0
+		height: 30px
+		+ss-sb
+		font-size: em(16)
+		color: #111
+		background-color: #fff
+		transition: width 0.5s
+		&.is-active
+			padding: 5px
+			width: 200px
+			transition: width 0.5s
+	&-btn
+		float: left
+		margin-left: 15px
+		padding: 15px
+		font-size: em(16)
+		color: #fff
+		line-height: 20px
+		text-transform: uppercase
+		background-color: transparent
+		transition: all 0.2s
+		&:hover
+			background-color: $red
+			transition: all 0.2s
+/* FOOTER */
+.footer
+	+pie-clearfix
+	.copyright
+		margin-top: 15px
+		float: left
+	.foot-nav
+		float: right
+.foot-nav
+	ul
+		text-transform: uppercase
+		+pie-clearfix
+		li
+			float: left
+			a
+				display: block
+				padding: 15px
+				transition: all 0.2s
+				&:hover
+					color: #fff
+					background-color: $red
+					transition: all 0.2s
+/* MAIN */
+.main-news
+	margin-bottom: 40px
+	+sans-xb
+	font-size: em(36)
+	line-height: 38px
+	a
+		display: block
+	&__img
+		max-height: 380px
+		overflow: hidden
+		img
+			width: 100%
+			height: auto
+			vertical-align: middle
+	&__desc
+		padding: 20px 60px 10px
+		height: 120px
+		background-color: #fff
+		.icon
+			float: right
+		p
+			overflow: hidden
+
