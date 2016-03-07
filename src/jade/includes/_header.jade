@@ -1,7 +1,7 @@
 header.header
 	// begin logo
 	.logo
-		a(href="#")
+		a(href="index.html")
 			img(src="img/logo.png", alt="Top Banger")
 	// end logo
 	// begin main-nav
@@ -22,8 +22,9 @@ header.header
 	// end main-nav
 	// begin search
 	.search
-		input(type="text" placeholder="search...").search-inp
 		button.search-btn
-			i.icon
-			| Search
+			+icon('search')
+			span Search
+		input(type="text" placeholder="Search").search-inp
+		button.submit-btn(type='submit') Go
 	// end search

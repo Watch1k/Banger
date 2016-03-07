@@ -55,9 +55,7 @@ var dest = {
 //jade
 gulp.task('jade', function() {
     return gulp.src(['src/jade/**/*.jade', '!src/jade/includes/**/*.jade'])
-        .pipe(jade({
-            pretty: true
-        }))
+        .pipe(jade())
         .pipe(htmlbeautify())
         .pipe(gulp.dest('build/'));
 });

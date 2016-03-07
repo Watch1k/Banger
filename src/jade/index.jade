@@ -1,4 +1,6 @@
 extend includes/_layout
+block title
+	title Index
 block content
 	// begin main-news
 	.main-news
@@ -6,7 +8,7 @@ block content
 			.main-news__img
 				img(src="img/content/test.jpg", alt="img")
 			.main-news__desc
-				i.icon
+				+icon('arrow-right')
 				p.
 					This Carolina Panther Is Airbnb-ing His Place For Super Bowl Sunday
 	// end main-news

@@ -28,6 +28,10 @@ svg
 	display: none
 .row
 	+pie-clearfix
+*
+	+selection
+		color: #fff
+		background-color: $red
 body
 	min-width: 320px
 	+sans-sb
@@ -51,12 +55,21 @@ body
 	&-wrap
 		margin: 0 auto
 		max-width: 1190px
+.wrap
+	padding-left: 0
+	padding-right: 0
+	transition: all 0.3s
+	+r(1279)
+		padding-left: 20px
+		padding-right: 20px
+		transition: all 0.3s
 /* HEADER */
 .header
 	position: relative
 	z-index: 1
 	height: 50px
 	line-height: 20px
+	letter-spacing: 0.1em
 	+pie-clearfix
 	.main-nav
 		float: left
@@ -97,10 +110,10 @@ body
 			a
 				display: block
 				padding: 15px
-				transition: all 0.2s
+				transition: all 0.3s
 				&:hover
 					background-color: $red
-					transition: all 0.2s
+					transition: all 0.3s
 .logo
 	a
 		display: block
@@ -116,31 +129,39 @@ body
 	&-inp
 		float: left
 		margin-top: 10px
-		padding: 5px 0
+		padding: 0
 		width: 0
 		height: 30px
-		+ss-sb
+		+sans-sb
 		font-size: em(16)
-		color: #111
-		background-color: #fff
+		color: #bbb
+		line-height: 30px
+		background-color: rgba(255,255,255,.1)
 		transition: width 0.5s
+		+placeholder-color(#bbb)
 		&.is-active
-			padding: 5px
-			width: 200px
+			padding: 0 5px
+			width: 140px
 			transition: width 0.5s
 	&-btn
-		float: left
+		float: right
 		margin-left: 15px
-		padding: 15px
+		padding: 15px 0
+		+ss-sb
 		font-size: em(16)
 		color: #fff
 		line-height: 20px
 		text-transform: uppercase
 		background-color: transparent
-		transition: all 0.2s
+		transition: all 0.3s
 		&:hover
 			background-color: $red
-			transition: all 0.2s
+			transition: all 0.3s
+		+r(1279)
+			padding-left: 15px
+			padding-right: 15px
+	.submit-btn
+		display: none
 /* FOOTER */
 .footer
 	+pie-clearfix
@@ -158,32 +179,40 @@ body
 			a
 				display: block
 				padding: 15px
-				transition: all 0.2s
+				transition: all 0.3s
 				&:hover
 					color: #fff
 					background-color: $red
-					transition: all 0.2s
+					transition: all 0.3s
 /* MAIN */
 .main-news
 	margin-bottom: 40px
 	+sans-xb
 	font-size: em(36)
 	line-height: 38px
-	a
+	> a
 		display: block
+		&:hover
+			.icon
+				fill: darken($red,20)
+				transition: all 0.3s
 	&__img
-		max-height: 380px
 		overflow: hidden
+		max-height: 380px
 		img
 			width: 100%
-			height: auto
-			vertical-align: middle
+			min-height: 100%
+			vertical-align: bottom
 	&__desc
-		padding: 20px 60px 10px
+		padding: 20px 60px 0
 		height: 120px
 		background-color: #fff
 		.icon
 			float: right
+			width: 80px
+			height: 80px
+			fill: $red
+			transition: all 0.3s
 		p
 			overflow: hidden
-
+			height: 82px

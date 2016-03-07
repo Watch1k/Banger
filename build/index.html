@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
+    <title>Index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <!-- theme color for android 5.0 -->
@@ -18,47 +19,28 @@
         <header class="header">
             <!-- begin logo-->
             <div class="logo">
-                <a href="#"><img src="img/logo.png" alt="Top Banger"></a>
+                <a href="index.html"><img src="img/logo.png" alt="Top Banger"></a>
             </div>
             <!-- end logo-->
             <!-- begin main-nav-->
             <nav class="main-nav">
                 <ul>
-                    <li>
-                        <a href="#">
-                            <svg class="icon icon-babes">
-                  <use xlink:href="img/icons.svg#icon-babes"></use>
-                </svg>Babes</a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg class="icon icon-lifestyle">
-                  <use xlink:href="img/icons.svg#icon-lifestyle"></use>
-                </svg>Lifestyle</a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg class="icon icon-entertainment">
-                  <use xlink:href="img/icons.svg#icon-entertainment"></use>
-                </svg>Entertainment</a>
-                    </li>
+                    <li><a href="#"><svg class="icon icon-babes"><use xlink:href="img/icons.svg#icon-babes"></use></svg>Babes</a></li>
+                    <li><a href="#"><svg class="icon icon-lifestyle"><use xlink:href="img/icons.svg#icon-lifestyle"></use></svg>Lifestyle</a></li>
+                    <li><a href="#"><svg class="icon icon-entertainment"><use xlink:href="img/icons.svg#icon-entertainment"></use></svg>Entertainment</a></li>
                 </ul>
             </nav>
             <!-- end main-nav-->
             <!-- begin search-->
-            <div class="search">
-                <input type="text" placeholder="search..." class="search-inp">
-                <button class="search-btn"><i class="icon"></i>Search</button>
-            </div>
+            <div class="search"><button class="search-btn"><svg class="icon icon-search"><use xlink:href="img/icons.svg#icon-search"></use></svg><span>Search</span></button><input type="text" placeholder="Search" class="search-inp"><button type="submit" class="submit-btn">Go</button></div>
             <!-- end search-->
         </header>
-
         <main class="main">
             <!-- begin main-news-->
             <div class="main-news">
                 <a href="#">
                     <div class="main-news__img"><img src="img/content/test.jpg" alt="img"></div>
-                    <div class="main-news__desc"><i class="icon"></i>
+                    <div class="main-news__desc"><svg class="icon icon-arrow-right"><use xlink:href="img/icons.svg#icon-arrow-right"></use></svg>
                         <p>This Carolina Panther Is Airbnb-ing His Place For Super Bowl Sunday</p>
                     </div>
                 </a>
@@ -66,7 +48,6 @@
             <!-- end main-news-->
         </main>
     </div>
-
     <footer class="footer">
         <div class="footer-wrap"><span class="copyright">&copy; TopBanger</span>
             <nav>
@@ -81,7 +62,6 @@
             </nav>
         </div>
     </footer>
-
     <script src="js/lib/head.js" data-headjs-load="js/app.js"></script>
 </body>
 
