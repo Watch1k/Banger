@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Index</title>
+    <title>Category</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <!-- theme color for android 5.0 -->
@@ -26,7 +26,7 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="#"><svg class="icon icon-babes"><use xlink:href="img/icons.svg#icon-babes"></use></svg>Babes</a></li>
-                    <li><a href="#"><svg class="icon icon-lifestyle"><use xlink:href="img/icons.svg#icon-lifestyle"></use></svg>Lifestyle</a></li>
+                    <li class="is-active"><a href="#"><svg class="icon icon-lifestyle"><use xlink:href="img/icons.svg#icon-lifestyle"></use></svg>Lifestyle</a></li>
                     <li><a href="#"><svg class="icon icon-entertainment"><use xlink:href="img/icons.svg#icon-entertainment"></use></svg>Entertainment</a></li>
                 </ul>
             </nav>
@@ -37,21 +37,11 @@
         </header>
         <main class="main">
             <div class="wrap">
-                <!-- begin main-news-->
-                <section class="main-news">
-                    <a href="#">
-                        <div class="main-news__img"><img src="img/content/test.jpg" alt="img"></div>
-                        <div class="main-news__desc"><svg class="icon icon-arrow-right"><use xlink:href="img/icons.svg#icon-arrow-right"></use></svg>
-                            <p>This Carolina Panther Is Airbnb-ing His Place For Super Bowl Sunday</p>
-                        </div>
-                    </a>
-                </section>
-                <!-- end main-news-->
                 <!-- begin tile-->
                 <section class="tile">
-                    <h2 class="section-title">Most Popular Articles</h2>
+                    <h2 class="title title-cat">Lifestyle</h2>
                     <ul class="tile__list">
-                        <li class="card"><a href="#" class="card__cat"><svg class="icon icon-entertainment"><use xlink:href="img/icons.svg#icon-entertainment"></use></svg></a>
+                        <li class="card">
                             <a href="#" class="card__in">
                                 <div class="card__in-img"><img src="img/content/1.jpg" alt="image"></div>
                                 <div class="card__in-text">
@@ -60,7 +50,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="card"><a href="#" class="card__cat"><svg class="icon icon-babes"><use xlink:href="img/icons.svg#icon-babes"></use></svg></a>
+                        <li class="card">
                             <a href="#" class="card__in">
                                 <div class="card__in-img"><img src="img/content/2.jpg" alt="image"></div>
                                 <div class="card__in-text">
@@ -69,7 +59,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="card"><a href="#" class="card__cat"><svg class="icon icon-lifestyle"><use xlink:href="img/icons.svg#icon-lifestyle"></use></svg></a>
+                        <li class="card">
                             <a href="#" class="card__in">
                                 <div class="card__in-img"><img src="img/content/3.jpg" alt="image"></div>
                                 <div class="card__in-text">
@@ -78,7 +68,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="card"><a href="#" class="card__cat"><svg class="icon icon-babes"><use xlink:href="img/icons.svg#icon-babes"></use></svg></a>
+                        <li class="card">
                             <a href="#" class="card__in">
                                 <div class="card__in-img"><img src="img/content/4.jpg" alt="image"></div>
                                 <div class="card__in-text">
@@ -87,7 +77,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="card"><a href="#" class="card__cat"><svg class="icon icon-entertainment"><use xlink:href="img/icons.svg#icon-entertainment"></use></svg></a>
+                        <li class="card">
                             <a href="#" class="card__in">
                                 <div class="card__in-img"><img src="img/content/5.jpg" alt="image"></div>
                                 <div class="card__in-text">
@@ -96,7 +86,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="card"><a href="#" class="card__cat"><svg class="icon icon-lifestyle"><use xlink:href="img/icons.svg#icon-lifestyle"></use></svg></a>
+                        <li class="card">
                             <a href="#" class="card__in">
                                 <div class="card__in-img"><img src="img/content/6.jpg" alt="image"></div>
                                 <div class="card__in-text">
@@ -105,7 +95,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="card"><a href="#" class="card__cat"><svg class="icon icon-babes"><use xlink:href="img/icons.svg#icon-babes"></use></svg></a>
+                        <li class="card">
                             <a href="#" class="card__in">
                                 <div class="card__in-img"><img src="img/content/2.jpg" alt="image"></div>
                                 <div class="card__in-text">
@@ -114,7 +104,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="card"><a href="#" class="card__cat"><svg class="icon icon-lifestyle"><use xlink:href="img/icons.svg#icon-lifestyle"></use></svg></a>
+                        <li class="card">
                             <a href="#" class="card__in">
                                 <div class="card__in-img"><img src="img/content/3.jpg" alt="image"></div>
                                 <div class="card__in-text">
@@ -123,12 +113,66 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="card"><a href="#" class="card__cat"><svg class="icon icon-babes"><use xlink:href="img/icons.svg#icon-babes"></use></svg></a>
+                        <li class="card">
                             <a href="#" class="card__in">
                                 <div class="card__in-img"><img src="img/content/4.jpg" alt="image"></div>
                                 <div class="card__in-text">
                                     <p>15 People Who Just Totally Went There</p>
                                     <p>If you could be anything, anything at all…</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="card">
+                            <a href="#" class="card__in">
+                                <div class="card__in-img"><img src="img/content/3.jpg" alt="image"></div>
+                                <div class="card__in-text">
+                                    <p>If ‘Broad City’ Quotes Were Inspirational Posters About Life</p>
+                                    <p>Broad City quotes will change your life…nomo fomo.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="card">
+                            <a href="#" class="card__in">
+                                <div class="card__in-img"><img src="img/content/4.jpg" alt="image"></div>
+                                <div class="card__in-text">
+                                    <p>15 People Who Just Totally Went There</p>
+                                    <p>If you could be anything, anything at all…</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="card">
+                            <a href="#" class="card__in">
+                                <div class="card__in-img"><img src="img/content/5.jpg" alt="image"></div>
+                                <div class="card__in-text">
+                                    <p>This Incredible Makeup Artist Transforms Herself Into Monsters</p>
+                                    <p>The creepiest creatures created by the stroke of a makeup brush.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="card">
+                            <a href="#" class="card__in">
+                                <div class="card__in-img"><img src="img/content/3.jpg" alt="image"></div>
+                                <div class="card__in-text">
+                                    <p>If ‘Broad City’ Quotes Were Inspirational Posters About Life</p>
+                                    <p>Broad City quotes will change your life…nomo fomo.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="card">
+                            <a href="#" class="card__in">
+                                <div class="card__in-img"><img src="img/content/4.jpg" alt="image"></div>
+                                <div class="card__in-text">
+                                    <p>15 People Who Just Totally Went There</p>
+                                    <p>If you could be anything, anything at all…</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="card">
+                            <a href="#" class="card__in">
+                                <div class="card__in-img"><img src="img/content/5.jpg" alt="image"></div>
+                                <div class="card__in-text">
+                                    <p>This Incredible Makeup Artist Transforms Herself Into Monsters</p>
+                                    <p>The creepiest creatures created by the stroke of a makeup brush.</p>
                                 </div>
                             </a>
                         </li>

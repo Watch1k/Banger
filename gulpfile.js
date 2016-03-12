@@ -19,6 +19,9 @@ var gulp = require('gulp'),
     svgstore = require('gulp-svgstore'),
     svgmin = require('gulp-svgmin'),
     cheerio = require('gulp-cheerio'),
+    coffee = require('gulp-coffee'),
+    gutil = require('gulp-util'),
+    notify = require("gulp-notify"),
     reload = browserSync.reload;
 
 // IE 8 opacity
@@ -81,6 +84,14 @@ gulp.task('sass', function() {
         .pipe(postcss(processors))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('build/css/'));
+});
+
+gulp.task('coffee', function() {
+    gulp.src(src.js + '/*.coffee')
+        // .pipe(sourcemaps.init())
+        .pipe(coffee({bare: true}).on('error', gutil.log, notify("ERROR!!!")))
+        // .pipe(sourcemaps.write())
+        .pipe(gulp.dest(dest.js));
 });
 
 // sprite
@@ -158,13 +169,16 @@ gulp.task('copy', function() {
 // delete app
 gulp.task('delete', function(cb) {
     rimraf('./build', cb);
+    gulp.src(src.root)
+        .pipe(notify("Delete"));
 });
 
 // make zip-file
 gulp.task('zip', function() {
     return gulp.src('build/**/*')
-        .pipe(zip('Miply.zip'))
-        .pipe(gulp.dest(''));
+        .pipe(zip('build.zip'))
+        .pipe(gulp.dest(''))
+        .pipe(notify("ZIP"));
 });
 
 //webserver
@@ -188,6 +202,7 @@ gulp.task('watch', function() {
     gulp.watch('src/jade/**/*.jade', ['jade']);
     gulp.watch(src.sass + '/**/*', ['sass']);
     gulp.watch('src/js/*', ['js']);
+    gulp.watch('src/coffee/*', ['coffee']);
     gulp.watch('src/img/*', ['sprite', 'copy']);
     gulp.watch('src/img/svg/*', ['svg-sprite']);
     gulp.watch(['src/*.html'], ['html']);
@@ -195,5 +210,5 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['browser-sync', 'watch'], function() {});
-gulp.task('build', ['jade', 'html', 'sprite', 'svg-sprite', 'copy', 'js', 'sass'], function() {});
+gulp.task('default', ['browser-sync', 'watch'], function() {gulp.src(dest.root).pipe(notify("Sync"));});
+gulp.task('build', ['jade', 'html', 'sprite', 'svg-sprite', 'copy', 'js', 'coffee', 'sass'], function() {gulp.src(dest.root).pipe(notify("Build"));});

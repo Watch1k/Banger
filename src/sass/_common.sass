@@ -1,21 +1,29 @@
 // fonts
-+font("opensans-semibold-webfont", "opensans-semibold-webfont")
-+font("opensans-extrabold-webfont", "opensans-extrabold-webfont")
-+font("sourcesanspro-semibold-webfont", "sourcesanspro-semibold-webfont")
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,800)
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:600)
 $default-fonts: Arial, sans-serif
+=sans-l
+	font-family: 'Open Sans', $default-fonts
+	font-weight: 300
+=sans
+	font-family: 'Open Sans', $default-fonts
+	font-weight: 400
 =sans-sb
-	font-family: "opensans-semibold-webfont", $default-fonts
+	font-family: 'Open Sans', $default-fonts
+	font-weight: 600
 =sans-xb
-	font-family: "opensans-extrabold-webfont", $default-fonts
+	font-family: 'Open Sans', $default-fonts
+	font-weight: 800
 =ss-sb
-	font-family: "sourcesanspro-semibold-webfont", $default-fonts
+	font-family: 'Source Sans Pro', $default-fonts
+	font-weight: 600
 
 // colors
 $red: #D1221E
 
-/*-------------------------------------------------------------------------*/
-/*----------------------------- MAIN STYLES -------------------------------*/
-/*-------------------------------------------------------------------------*/
+/* ==========================================================================
+   Main Styles
+   ========================================================================== */
 a:hover, a:focus
 	text-decoration: none
 a
@@ -37,33 +45,19 @@ body
 	+sans-sb
 	font-size: 16px
 	color: #111
-	line-height: 1.6
+	line-height: 1.42857
 	background-color: #111
 .wrapper
 	overflow: hidden
 	margin: 0 auto
-	max-width: 1190px
 	min-height: 100%
-	padding-bottom: 50px
-.footer
-	margin-top: -50px
-	height: 50px
-	+ss-sb
-	font-size: em(14)
-	line-height: 20px
-	background-color: #fff
-	&-wrap
-		margin: 0 auto
-		max-width: 1190px
+	padding-bottom: 40px
 .wrap
-	padding-left: 0
-	padding-right: 0
+	+container
 	transition: all 0.3s
-	+r(1279)
-		padding-left: 20px
-		padding-right: 20px
-		transition: all 0.3s
-/* HEADER */
+/* ==========================================================================
+   Header
+   ========================================================================== */
 .header
 	position: relative
 	z-index: 1
@@ -96,13 +90,11 @@ body
 		&.icon-entertainment
 			stroke-width: 15
 			stroke: #fff
-		&.icon-search
-			top: 1px
 .main-nav
-	margin-left: 25px + 227px
+	margin-left: 40px + 227px
 	ul
 		+pie-clearfix
-		font-size: em(15)
+		font-size: 15px
 		color: #fff
 		text-transform: uppercase
 		li
@@ -111,7 +103,8 @@ body
 				display: block
 				padding: 15px
 				transition: all 0.3s
-				&:hover
+			&:hover, &.is-active
+				a
 					background-color: $red
 					transition: all 0.3s
 .logo
@@ -121,11 +114,10 @@ body
 			width: 227px
 			height: 123px
 			vertical-align: middle
+/* search field */
 .search
 	+ss-sb
 	+pie-clearfix
-	input[type="submit"]
-		// display: none
 	&-inp
 		float: left
 		margin-top: 10px
@@ -133,7 +125,7 @@ body
 		width: 0
 		height: 30px
 		+sans-sb
-		font-size: em(16)
+		font-size: 16px
 		color: #bbb
 		line-height: 30px
 		background-color: rgba(255,255,255,.1)
@@ -146,7 +138,7 @@ body
 	&-btn
 		float: right
 		margin-left: 15px
-		padding: 15px 0
+		padding: 15px 5px
 		+ss-sb
 		font-size: em(16)
 		color: #fff
@@ -162,12 +154,24 @@ body
 			padding-right: 15px
 	.submit-btn
 		display: none
-/* FOOTER */
+/* ==========================================================================
+   Footer
+   ========================================================================== */
 .footer
+	margin-top: -40px
+	height: 40px
+	+ss-sb
+	font-size: 14px
+	line-height: 20px
+	background-color: #fff
 	+pie-clearfix
 	.copyright
-		margin-top: 15px
+		margin-top: 10px
 		float: left
+		transition: all 0.3s
+		+r(1279)
+			margin-left: 20px
+			transition: all 0.3s
 	.foot-nav
 		float: right
 .foot-nav
@@ -178,18 +182,20 @@ body
 			float: left
 			a
 				display: block
-				padding: 15px
+				padding: 10px 15px
 				transition: all 0.3s
 				&:hover
 					color: #fff
 					background-color: $red
 					transition: all 0.3s
-/* MAIN */
+/* ==========================================================================
+   Main
+   ========================================================================== */
+/* main news */
 .main-news
-	margin-bottom: 40px
 	+sans-xb
 	font-size: em(36)
-	line-height: 38px
+	line-height: (38/36)
 	> a
 		display: block
 		&:hover
@@ -209,10 +215,151 @@ body
 		background-color: #fff
 		.icon
 			float: right
+			margin-left: 20px
 			width: 80px
 			height: 80px
 			fill: $red
 			transition: all 0.3s
 		p
 			overflow: hidden
-			height: 82px
+			height: 2em * 40/36
+/* card */
+.card
+	position: relative
+	&__cat
+		position: absolute
+		top: 0
+		right: 0
+		width: 30px
+		height: 30px
+		text-align: center
+		background-color: #111
+		+vertical
+		z-index: 1
+		transition: all 0.3s
+		.icon
+			display: inline-block
+			margin-right: -4px
+			width: 20px
+			height: 15px
+			vertical-align: middle
+			fill: #fff
+			&.icon-babes
+				stroke-width: 12
+				stroke: #fff
+			&.icon-lifestyle
+				stroke-width: 1
+				stroke: #fff
+			&.icon-entertainment
+				stroke-width: 15
+				stroke: #fff
+		&:hover
+			background-color: $red
+			transition: all 0.3s
+	&__in
+		display: block
+		transition: all 0.3s
+		&:hover
+			box-shadow: 0 0 10px 4px $red
+			transition: all 0.3s
+		&-img
+			+ratio(37,21)
+			img
+				width: 100%
+				min-height: 100%
+				+ratio-in
+		&-text
+			padding: 10px 30px 30px 20px
+			height: 160px
+			background-color: #fff
+			p
+				overflow: hidden
+				max-height: 3em * 25/20
+				+sans-xb
+				font-size: 20px
+				line-height: (25/20)
+				+ p
+					margin-top: 10px
+					max-height: 2em * 18/13
+					+sans
+					font-size: 13px
+					line-height: (18/13)
+					color: #111
+/* Tile Section */
+.tile
+	&__list
+		+pre(- gutter())
+		+post(- gutter())
+		+pie-clearfix
+		+r(1279)
+			+gutter(6 split)
+		.card
+			+span(4)
+			&:nth-child(3) ~ .card
+				margin-top: 2*gutter()
+			+r(959)
+				+gallery(6)
+			+r(479)
+				+gallery(12)
+			&__cat
+				right: gutter()
+/* Load More */
+.load-more
+	margin-top: 40px
+	margin-bottom: 60px
+	text-align: center
+	&__btn
+		display: inline-block
+		.icon
+			display: block
+			margin-left: auto
+			margin-right: auto
+			width: 80px
+			height: 80px
+			fill: $red
+			transition: all 0.3s
+		&:hover
+			.icon
+				fill: darken($red,20)
+				transition: all 0.3s
+		span
+			display: block
+			margin-top: 10px
+			+ss-sb
+			color: #fff
+			line-height: 20px
+			text-transform: uppercase
+			letter-spacing: 0.05em
+/* ==========================================================================
+   Post page
+   ========================================================================== */
+.post
+	background-color: #fff
+	margin-right: 370px
+	img
+		max-width: 100%
+.aside
+	float: right
+	width: 370px
+/* ==========================================================================
+   Other Styles
+   ========================================================================== */
+.title
+	margin-top: 40px
+	margin-bottom: 40px
+	+sans-l
+	font-size: em(42)
+	line-height: (57/42)
+	color: #fff
+	text-align: center
+	text-transform: uppercase
+	letter-spacing: 0.25em
+	+span(12 inside)
+	+r(1023)
+		margin-top: 30px
+		margin-bottom: 30px
+	&.title-cat
+		margin-top: 20px
+		margin-left: 227px + 25px
+		text-align: left
+		+sans-xb

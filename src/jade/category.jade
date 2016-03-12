@@ -1,95 +1,104 @@
 extend includes/_layout
+block navToggle
+	- var navToggle = 'is-active'
 block title
-	title Index
+	title Category
 block content
 	.wrap
-		// begin main-news
-		section.main-news
-			a(href="#")
-				.main-news__img
-					img(src="img/content/test.jpg", alt="img")
-				.main-news__desc
-					+icon('arrow-right')
-					p.
-						This Carolina Panther Is Airbnb-ing His Place For Super Bowl Sunday
-		// end main-news
-
 		// begin tile
 		section.tile
-			h2.section-title Most Popular Articles
+			h2.title.title-cat Lifestyle
 			ul.tile__list
 				li.card
-					a(href="#").card__cat
-						+icon('entertainment')
 					a(href="#").card__in
 						.card__in-img: img(src="img/content/1.jpg", alt="image")
 						.card__in-text
 							p 18 Amazing Images From National Geographic’s Traveler Photo Contest
 							p Get up close and personal with our crazy amazing world.
 				li.card
-					a(href="#").card__cat
-						+icon('babes')
 					a(href="#").card__in
 						.card__in-img: img(src="img/content/2.jpg", alt="image")
 						.card__in-text
 							p This Is All You Need To Know About Workout Supplements
 							p What they are and aren’t doing to your body.
 				li.card
-					a(href="#").card__cat
-						+icon('lifestyle')
 					a(href="#").card__in
 						.card__in-img: img(src="img/content/3.jpg", alt="image")
 						.card__in-text
 							p If ‘Broad City’ Quotes Were Inspirational Posters About Life
 							p Broad City quotes will change your life…nomo fomo.
 				li.card
-					a(href="#").card__cat
-						+icon('babes')
 					a(href="#").card__in
 						.card__in-img: img(src="img/content/4.jpg", alt="image")
 						.card__in-text
 							p 15 People Who Just Totally Went There
 							p If you could be anything, anything at all…
 				li.card
-					a(href="#").card__cat
-						+icon('entertainment')
 					a(href="#").card__in
 						.card__in-img: img(src="img/content/5.jpg", alt="image")
 						.card__in-text
 							p This Incredible Makeup Artist Transforms Herself Into Monsters
 							p The creepiest creatures created by the stroke of a makeup brush.
 				li.card
-					a(href="#").card__cat
-						+icon('lifestyle')
 					a(href="#").card__in
 						.card__in-img: img(src="img/content/6.jpg", alt="image")
 						.card__in-text
 							p The creepiest creatures created by the stroke of a makeup brush.
 							p These people need new friends, stat.
 				li.card
-					a(href="#").card__cat
-						+icon('babes')
 					a(href="#").card__in
 						.card__in-img: img(src="img/content/2.jpg", alt="image")
 						.card__in-text
 							p This Is All You Need To Know About Workout Supplements
 							p What they are and aren’t doing to your body.
 				li.card
-					a(href="#").card__cat
-						+icon('lifestyle')
 					a(href="#").card__in
 						.card__in-img: img(src="img/content/3.jpg", alt="image")
 						.card__in-text
 							p If ‘Broad City’ Quotes Were Inspirational Posters About Life
 							p Broad City quotes will change your life…nomo fomo.
 				li.card
-					a(href="#").card__cat
-						+icon('babes')
 					a(href="#").card__in
 						.card__in-img: img(src="img/content/4.jpg", alt="image")
 						.card__in-text
 							p 15 People Who Just Totally Went There
 							p If you could be anything, anything at all…
+				li.card
+					a(href="#").card__in
+						.card__in-img: img(src="img/content/3.jpg", alt="image")
+						.card__in-text
+							p If ‘Broad City’ Quotes Were Inspirational Posters About Life
+							p Broad City quotes will change your life…nomo fomo.
+				li.card
+					a(href="#").card__in
+						.card__in-img: img(src="img/content/4.jpg", alt="image")
+						.card__in-text
+							p 15 People Who Just Totally Went There
+							p If you could be anything, anything at all…
+				li.card
+					a(href="#").card__in
+						.card__in-img: img(src="img/content/5.jpg", alt="image")
+						.card__in-text
+							p This Incredible Makeup Artist Transforms Herself Into Monsters
+							p The creepiest creatures created by the stroke of a makeup brush.
+				li.card
+					a(href="#").card__in
+						.card__in-img: img(src="img/content/3.jpg", alt="image")
+						.card__in-text
+							p If ‘Broad City’ Quotes Were Inspirational Posters About Life
+							p Broad City quotes will change your life…nomo fomo.
+				li.card
+					a(href="#").card__in
+						.card__in-img: img(src="img/content/4.jpg", alt="image")
+						.card__in-text
+							p 15 People Who Just Totally Went There
+							p If you could be anything, anything at all…
+				li.card
+					a(href="#").card__in
+						.card__in-img: img(src="img/content/5.jpg", alt="image")
+						.card__in-text
+							p This Incredible Makeup Artist Transforms Herself Into Monsters
+							p The creepiest creatures created by the stroke of a makeup brush.
 		// end tile
 		// begin load-more
 		.load-more

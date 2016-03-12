@@ -1,4 +1,6 @@
-header.header
+block navToggle
+	- var navToggle = ''
+header.header.wrap
 	// begin logo
 	.logo
 		a(href="index.html")
@@ -11,7 +13,7 @@ header.header
 				a(href="#")
 					+icon('babes')
 					| Babes
-			li
+			li(class="#{navToggle}")
 				a(href="#")
 					+icon('lifestyle')
 					| Lifestyle

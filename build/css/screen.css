@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,800);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:600);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5,
 h6, p, blockquote, pre, a, abbr, acronym, address, big,
 cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small,
@@ -260,30 +262,9 @@ a {
   box-shadow: none;
 }
 
-@font-face {
-  font-family: "opensans-semibold-webfont";
-  src: url("../css/fonts/opensans-semibold-webfont.eot");
-  src: url("../css/fonts/opensans-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../css/fonts/opensans-semibold-webfont.woff") format("woff"), url("../css/fonts/opensans-semibold-webfont.woff2") format("woff2"), url("../css/fonts/opensans-semibold-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "opensans-extrabold-webfont";
-  src: url("../css/fonts/opensans-extrabold-webfont.eot");
-  src: url("../css/fonts/opensans-extrabold-webfont.eot?#iefix") format("embedded-opentype"), url("../css/fonts/opensans-extrabold-webfont.woff") format("woff"), url("../css/fonts/opensans-extrabold-webfont.woff2") format("woff2"), url("../css/fonts/opensans-extrabold-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "sourcesanspro-semibold-webfont";
-  src: url("../css/fonts/sourcesanspro-semibold-webfont.eot");
-  src: url("../css/fonts/sourcesanspro-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../css/fonts/sourcesanspro-semibold-webfont.woff") format("woff"), url("../css/fonts/sourcesanspro-semibold-webfont.woff2") format("woff2"), url("../css/fonts/sourcesanspro-semibold-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-/*------------------------------------------------------------------------- */
-/*----------------------------- MAIN STYLES ------------------------------- */
-/*------------------------------------------------------------------------- */
+/* ==========================================================================
+ * Main Styles
+ * ========================================================================== */
 a:hover, a:focus {
   text-decoration: none;
 }
@@ -326,54 +307,57 @@ svg {
 
 body {
   min-width: 320px;
-  font-family: "opensans-semibold-webfont", Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 600;
   font-size: 16px;
   color: #111;
-  line-height: 1.6;
+  line-height: 1.42857;
   background-color: #111;
 }
 
 .wrapper {
   overflow: hidden;
   margin: 0 auto;
-  max-width: 1190px;
   min-height: 100%;
-  padding-bottom: 50px;
-}
-
-.footer {
-  margin-top: -50px;
-  height: 50px;
-  font-family: "sourcesanspro-semibold-webfont", Arial, sans-serif;
-  font-size: 0.875em;
-  line-height: 20px;
-  background-color: #fff;
-}
-.footer-wrap {
-  margin: 0 auto;
-  max-width: 1190px;
+  padding-bottom: 40px;
 }
 
 .wrap {
-  padding-left: 0;
-  padding-right: 0;
+  -susy-container: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 0.5, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true), use-custom: (box-sizing: true));
+  max-width: 1190px;
+  margin-left: auto;
+  margin-right: auto;
+  -susy-show-grid: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 0.5, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true), use-custom: (box-sizing: true));
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(203, 48, 48, 0.25)), to(rgba(220, 107, 107, 0.25)));
+  background-image: -webkit-linear-gradient(left, rgba(203, 48, 48, 0.25), rgba(220, 107, 107, 0.25));
+  background-image: -moz-linear-gradient(left, rgba(203, 48, 48, 0.25), rgba(220, 107, 107, 0.25));
+  background-image: -o-linear-gradient(left, rgba(203, 48, 48, 0.25), rgba(220, 107, 107, 0.25));
+  background-image: linear-gradient(to right, rgba(203, 48, 48, 0.25), rgba(220, 107, 107, 0.25));
+  -moz-background-size: 8.33333%;
+  -o-background-size: 8.33333%;
+  background-size: 8.33333%;
+  -moz-background-origin: content-box;
+  -o-background-origin: content-box;
+  background-origin: content-box;
+  -moz-background-clip: content-box;
+  -o-background-clip: content-box;
+  background-clip: content-box;
+  background-position: left top;
+  -susy-background-grid: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 0.5, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true), use-custom: (box-sizing: true));
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-@media only screen and (max-width: 1279px) {
-  .wrap {
-    padding-left: 20px;
-    padding-right: 20px;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-  }
+.wrap:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 
-/* HEADER */
+/* ==========================================================================
+ * Header
+ * ========================================================================== */
 .header {
   position: relative;
   z-index: 1;
@@ -420,15 +404,12 @@ body {
   stroke-width: 15;
   stroke: #fff;
 }
-.header .icon.icon-search {
-  top: 1px;
-}
 
 .main-nav {
-  margin-left: 252px;
+  margin-left: 267px;
 }
 .main-nav ul {
-  font-size: 0.9375em;
+  font-size: 15px;
   color: #fff;
   text-transform: uppercase;
 }
@@ -450,7 +431,7 @@ body {
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-.main-nav ul li a:hover {
+.main-nav ul li:hover a, .main-nav ul li.is-active a {
   background-color: #D1221E;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -467,8 +448,10 @@ body {
   vertical-align: middle;
 }
 
+/* search field */
 .search {
-  font-family: "sourcesanspro-semibold-webfont", Arial, sans-serif;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: 600;
 }
 .search:before, .search:after {
   content: "";
@@ -483,8 +466,9 @@ body {
   padding: 0;
   width: 0;
   height: 30px;
-  font-family: "opensans-semibold-webfont", Arial, sans-serif;
-  font-size: 1em;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
   color: #bbb;
   line-height: 30px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -512,8 +496,9 @@ body {
 .search-btn {
   float: right;
   margin-left: 15px;
-  padding: 15px 0;
-  font-family: "sourcesanspro-semibold-webfont", Arial, sans-serif;
+  padding: 15px 5px;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: 600;
   font-size: 1em;
   color: #fff;
   line-height: 20px;
@@ -541,7 +526,18 @@ body {
   display: none;
 }
 
-/* FOOTER */
+/* ==========================================================================
+ * Footer
+ * ========================================================================== */
+.footer {
+  margin-top: -40px;
+  height: 40px;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: #fff;
+}
 .footer:before, .footer:after {
   content: "";
   display: table;
@@ -550,8 +546,21 @@ body {
   clear: both;
 }
 .footer .copyright {
-  margin-top: 15px;
+  margin-top: 10px;
   float: left;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media only screen and (max-width: 1279px) {
+  .footer .copyright {
+    margin-left: 20px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
 }
 .footer .foot-nav {
   float: right;
@@ -572,7 +581,7 @@ body {
 }
 .foot-nav ul li a {
   display: block;
-  padding: 15px;
+  padding: 10px 15px;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -587,12 +596,15 @@ body {
   transition: all 0.3s;
 }
 
-/* MAIN */
+/* ==========================================================================
+ * Main
+ * ========================================================================== */
+/* main news */
 .main-news {
-  margin-bottom: 40px;
-  font-family: "opensans-extrabold-webfont", Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 800;
   font-size: 2.25em;
-  line-height: 38px;
+  line-height: 1.05556;
 }
 .main-news > a {
   display: block;
@@ -620,6 +632,7 @@ body {
 }
 .main-news__desc .icon {
   float: right;
+  margin-left: 20px;
   width: 80px;
   height: 80px;
   fill: #D1221E;
@@ -630,7 +643,290 @@ body {
 }
 .main-news__desc p {
   overflow: hidden;
-  height: 82px;
+  height: 2.22222em;
+}
+
+/* card */
+.card {
+  position: relative;
+}
+.card__cat {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: #111;
+  white-space: nowrap;
+  z-index: 1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.card__cat:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 100%;
+  margin-right: -0.25em;
+}
+.card__cat .icon {
+  display: inline-block;
+  margin-right: -4px;
+  width: 20px;
+  height: 15px;
+  vertical-align: middle;
+  fill: #fff;
+}
+.card__cat .icon.icon-babes {
+  stroke-width: 12;
+  stroke: #fff;
+}
+.card__cat .icon.icon-lifestyle {
+  stroke-width: 1;
+  stroke: #fff;
+}
+.card__cat .icon.icon-entertainment {
+  stroke-width: 15;
+  stroke: #fff;
+}
+.card__cat:hover {
+  background-color: #D1221E;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.card__in {
+  display: block;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.card__in:hover {
+  -webkit-box-shadow: 0 0 10px 4px #D1221E;
+  -moz-box-shadow: 0 0 10px 4px #D1221E;
+  box-shadow: 0 0 10px 4px #D1221E;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.card__in-img {
+  position: relative;
+}
+.card__in-img:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 56.75676%;
+}
+.card__in-img img {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.card__in-text {
+  padding: 10px 30px 30px 20px;
+  height: 160px;
+  background-color: #fff;
+}
+.card__in-text p {
+  overflow: hidden;
+  max-height: 3.75em;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.25;
+}
+.card__in-text p + p {
+  margin-top: 10px;
+  max-height: 2.76923em;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.38462;
+  color: #111;
+}
+
+/* Tile Section */
+.tile__list {
+  -susy-pre: -20px;
+  margin-left: -20px;
+  -susy-post: -20px;
+  margin-right: -20px;
+}
+.tile__list:before, .tile__list:after {
+  content: "";
+  display: table;
+}
+.tile__list:after {
+  clear: both;
+}
+@media only screen and (max-width: 1279px) {
+  .tile__list {
+    -susy-gutters: 6 split;
+    margin-left: 2.77778%;
+    margin-right: 2.77778%;
+  }
+}
+.tile__list .card {
+  -susy-span: 4;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 33.33333%;
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  -susy-nested: (span: 4);
+}
+.tile__list .card:nth-child(3) ~ .card {
+  margin-top: 40px;
+}
+@media only screen and (max-width: 959px) {
+  .tile__list .card {
+    -susy-gallery: 6;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .tile__list .card:nth-child(2n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    -susy-first: (span: 6, location: 1);
+  }
+  .tile__list .card:nth-child(2n + 2) {
+    margin-left: 50%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .tile__list .card {
+    -susy-gallery: 12;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .tile__list .card:nth-child(1n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+.tile__list .card__cat {
+  right: 20px;
+}
+
+/* Load More */
+.load-more {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.load-more__btn {
+  display: inline-block;
+}
+.load-more__btn .icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80px;
+  height: 80px;
+  fill: #D1221E;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.load-more__btn:hover .icon {
+  fill: #781311;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.load-more__btn span {
+  display: block;
+  margin-top: 10px;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: 600;
+  color: #fff;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+ * Post page
+ * ========================================================================== */
+.post {
+  background-color: #fff;
+  margin-right: 370px;
+}
+.post img {
+  max-width: 100%;
+}
+
+.aside {
+  float: right;
+  width: 370px;
+}
+
+/* ==========================================================================
+ * Other Styles
+ * ========================================================================== */
+.title {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 2.625em;
+  line-height: 1.35714;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  -susy-span: 12 inside;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 1.38889%;
+  padding-right: 1.38889%;
+  -susy-nested: (span: 12, gutter-position: inside);
+}
+@media only screen and (max-width: 1023px) {
+  .title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+.title.title-cat {
+  margin-top: 20px;
+  margin-left: 252px;
+  text-align: left;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 800;
 }
 
 
