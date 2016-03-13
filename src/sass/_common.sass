@@ -336,12 +336,39 @@ body
    ========================================================================== */
 .post
 	background-color: #fff
-	margin-right: 370px
+	margin-right: 410px
+	+gutter()
+	+pie-clearfix
 	img
 		max-width: 100%
+		vertical-align: bottom
+	&__img
+		margin-bottom: 10px
+		+pre(- gutter())
+		+post(- gutter())
+	&__title
+		margin-bottom: 20px
+		+sans-xb
+		font-size: em(36)
+		line-height: (42/36)
+	p
+		margin-bottom: 20px
+		img
+			+ img
+				margin-top: 10px
+	.advert-wrap
+		margin-top: 30px
+		margin-bottom: 30px
+		.advert-bg
+			height: 90px
+			background-color: rgba(#111111, 0.1)
 .aside
 	float: right
 	width: 370px
+	&__list
+		.card
+			+ .card
+				margin-top: gutter()
 /* ==========================================================================
    Other Styles
    ========================================================================== */
