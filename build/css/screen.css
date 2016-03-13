@@ -323,11 +323,11 @@ body {
 }
 
 .wrap {
-  -susy-container: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 0.5, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true), use-custom: (box-sizing: true));
+  -susy-container: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 1/2, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true), use-custom: (box-sizing: true));
   max-width: 1190px;
   margin-left: auto;
   margin-right: auto;
-  -susy-show-grid: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 0.5, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true), use-custom: (box-sizing: true));
+  -susy-show-grid: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 1/2, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true), use-custom: (box-sizing: true));
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(203, 48, 48, 0.25)), to(rgba(220, 107, 107, 0.25)));
   background-image: -webkit-linear-gradient(left, rgba(203, 48, 48, 0.25), rgba(220, 107, 107, 0.25));
   background-image: -moz-linear-gradient(left, rgba(203, 48, 48, 0.25), rgba(220, 107, 107, 0.25));
@@ -343,7 +343,7 @@ body {
   -o-background-clip: content-box;
   background-clip: content-box;
   background-position: left top;
-  -susy-background-grid: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 0.5, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true), use-custom: (box-sizing: true));
+  -susy-background-grid: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 1/2, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true), use-custom: (box-sizing: true));
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -587,7 +587,7 @@ body {
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-.foot-nav ul li a:hover {
+.foot-nav ul li:hover a, .foot-nav ul li.is-active a {
   color: #fff;
   background-color: #D1221E;
   -webkit-transition: all 0.3s;
@@ -897,6 +897,8 @@ body {
 .title {
   margin-top: 40px;
   margin-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
   font-family: "Open Sans", Arial, sans-serif;
   font-weight: 300;
   font-size: 2.625em;
@@ -905,15 +907,6 @@ body {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  -susy-span: 12 inside;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 100%;
-  float: left;
-  padding-left: 1.38889%;
-  padding-right: 1.38889%;
-  -susy-nested: (span: 12, gutter-position: inside);
 }
 @media only screen and (max-width: 1023px) {
   .title {
@@ -927,6 +920,38 @@ body {
   text-align: left;
   font-family: "Open Sans", Arial, sans-serif;
   font-weight: 800;
+}
+
+/* ==========================================================================
+ * About Page
+ * ========================================================================== */
+.about {
+  margin-top: 40px;
+  padding: 40px 510px 60px 60px;
+  line-height: 1.5;
+  background: #fff url("../img/bg/img_boobs.png") 92% -2px no-repeat;
+  -moz-background-size: 371px 186px;
+  -o-background-size: 371px 186px;
+  background-size: 371px 186px;
+}
+.about p + p {
+  margin-top: 20px;
+}
+
+/* ==========================================================================
+ * Privacy Page
+ * ========================================================================== */
+.privacy {
+  margin-top: 40px;
+  padding: 40px 510px 60px 60px;
+  line-height: 1.5;
+  background: #fff url("../img/bg/img_glasses_big.png") 125% 55px no-repeat;
+  -moz-background-size: 608px 207px;
+  -o-background-size: 608px 207px;
+  background-size: 608px 207px;
+}
+.privacy p + p {
+  margin-top: 20px;
 }
 
 

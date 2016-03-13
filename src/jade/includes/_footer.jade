@@ -1,14 +1,16 @@
+block footToggle
+	-var footToggle = ''
+-var footMenu = ['About', 'Contact', 'Advertising', 'Privacy Policy']
 footer.footer
 	.wrap
 		span.copyright &copy; TopBanger
 		nav
 			.foot-nav
 				ul
-					li
-						a(href="#") About
-					li
-						a(href="#") Contact
-					li
-						a(href="#") Advertising
-					li
-						a(href="#") Privaci Policy
+					each value in footMenu
+						if footToggle === value
+							li.is-active
+								a(href='#')= value
+						else
+							li
+								a(href='#')= value

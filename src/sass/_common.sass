@@ -184,7 +184,8 @@ body
 				display: block
 				padding: 10px 15px
 				transition: all 0.3s
-				&:hover
+			&:hover, &.is-active
+				a
 					color: #fff
 					background-color: $red
 					transition: all 0.3s
@@ -347,6 +348,8 @@ body
 .title
 	margin-top: 40px
 	margin-bottom: 40px
+	padding-left: 20px
+	padding-right: 20px
 	+sans-l
 	font-size: em(42)
 	line-height: (57/42)
@@ -354,7 +357,6 @@ body
 	text-align: center
 	text-transform: uppercase
 	letter-spacing: 0.25em
-	+span(12 inside)
 	+r(1023)
 		margin-top: 30px
 		margin-bottom: 30px
@@ -363,3 +365,27 @@ body
 		margin-left: 227px + 25px
 		text-align: left
 		+sans-xb
+/* ==========================================================================
+   About Page
+   ========================================================================== */
+.about
+	margin-top: 40px
+	padding: 40px 510px 60px 60px
+	line-height: (24/16)
+	background: #fff url("../img/bg/img_boobs.png") 92% -2px no-repeat
+	background-size: 371px 186px
+	p
+		+ p
+			margin-top: 20px
+/* ==========================================================================
+   Privacy Page
+   ========================================================================== */
+.privacy
+	margin-top: 40px
+	padding: 40px 510px 60px 60px
+	line-height: (24/16)
+	background: #fff url("../img/bg/img_glasses_big.png") 125% 55px no-repeat
+	background-size: 608px 207px
+	p
+		+ p
+			margin-top: 20px

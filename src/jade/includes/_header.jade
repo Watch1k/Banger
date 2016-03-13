@@ -1,5 +1,7 @@
 block navToggle
-	- var navToggle = ''
+	- var headToggle = ''
+-var headMenu = ['Babes', 'Lifestyle', 'Entertainment']
+-var icons = ['babes', 'lifestyle', 'entertainment']
 header.header.wrap
 	// begin logo
 	.logo
@@ -9,18 +11,13 @@ header.header.wrap
 	// begin main-nav
 	nav.main-nav
 		ul
-			li
-				a(href="#")
-					+icon('babes')
-					| Babes
-			li(class="#{navToggle}")
-				a(href="#")
-					+icon('lifestyle')
-					| Lifestyle
-			li
-				a(href="#")
-					+icon('entertainment')
-					| Entertainment
+			each value in headMenu
+				if headToggle === value
+					li.is-active
+						a(href='#', title=value)= value
+				else
+					li
+						a(href='#', title=value)= value
 	// end main-nav
 	// begin search
 	.search
