@@ -55,6 +55,7 @@ body
 .wrap
 	+container
 	transition: all 0.3s
+	+pie-clearfix
 /* ==========================================================================
    Header
    ========================================================================== */
@@ -226,7 +227,8 @@ body
 			height: 2em * 40/36
 /* card */
 .card
-	position: relative
+	li
+		position: relative
 	&__cat
 		position: absolute
 		top: 0
@@ -294,19 +296,17 @@ body
 		+pie-clearfix
 		+r(1279)
 			+gutter(6 split)
-		.card
+		li
 			+span(4)
-			&:nth-child(3) ~ .card
-				margin-top: 2*gutter()
+			margin-bottom: 2*gutter()
 			+r(959)
 				+gallery(6)
 			+r(479)
 				+gallery(12)
-			&__cat
-				right: gutter()
+		.card__cat
+			right: gutter()
 /* Load More */
 .load-more
-	margin-top: 40px
 	margin-bottom: 60px
 	text-align: center
 	&__btn
@@ -335,10 +335,10 @@ body
    Post page
    ========================================================================== */
 .post
+	overflow: hidden
 	background-color: #fff
 	margin-right: 410px
 	+gutter()
-	+pie-clearfix
 	img
 		max-width: 100%
 		vertical-align: bottom
@@ -366,32 +366,15 @@ body
 	float: right
 	width: 370px
 	&__list
-		.card
-			+ .card
+		li
+			+ li
 				margin-top: gutter()
-/* ==========================================================================
-   Other Styles
-   ========================================================================== */
-.title
-	margin-top: 40px
-	margin-bottom: 40px
-	padding-left: 20px
-	padding-right: 20px
-	+sans-l
-	font-size: em(42)
-	line-height: (57/42)
-	color: #fff
-	text-align: center
-	text-transform: uppercase
-	letter-spacing: 0.25em
-	+r(1023)
-		margin-top: 30px
-		margin-bottom: 30px
-	&.title-cat
-		margin-top: 20px
-		margin-left: 227px + 25px
-		text-align: left
-		+sans-xb
+.trend__list
+	+pre(-10px)
+	li
+		+span(220px (gutter-override: 20px))
+	.card__in-img
+		+ratio(1,1)
 /* ==========================================================================
    About Page
    ========================================================================== */
@@ -416,3 +399,26 @@ body
 	p
 		+ p
 			margin-top: 20px
+/* ==========================================================================
+   Other Styles
+   ========================================================================== */
+.title
+	margin-top: 40px
+	margin-bottom: 40px
+	padding-left: 20px
+	padding-right: 20px
+	+sans-l
+	font-size: em(42)
+	line-height: (57/42)
+	color: #fff
+	text-align: center
+	text-transform: uppercase
+	letter-spacing: 0.25em
+	+r(1023)
+		margin-top: 30px
+		margin-bottom: 30px
+	&.title-cat
+		margin-top: 20px
+		margin-left: 227px + 25px
+		text-align: left
+		+sans-xb

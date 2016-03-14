@@ -323,11 +323,11 @@ body {
 }
 
 .wrap {
-  -susy-container: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 1/2, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true));
+  -susy-container: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 0.5, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true));
   max-width: 1190px;
   margin-left: auto;
   margin-right: auto;
-  -susy-show-grid: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 1/2, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true));
+  -susy-show-grid: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 0.5, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true));
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(203, 48, 48, 0.25)), to(rgba(220, 107, 107, 0.25)));
   background-image: -webkit-linear-gradient(left, rgba(203, 48, 48, 0.25), rgba(220, 107, 107, 0.25));
   background-image: -moz-linear-gradient(left, rgba(203, 48, 48, 0.25), rgba(220, 107, 107, 0.25));
@@ -343,7 +343,7 @@ body {
   -o-background-clip: content-box;
   background-clip: content-box;
   background-position: left top;
-  -susy-background-grid: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 1/2, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true));
+  -susy-background-grid: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 0.5, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true));
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -352,6 +352,13 @@ body {
 .wrap:after {
   content: " ";
   display: block;
+  clear: both;
+}
+.wrap:before, .wrap:after {
+  content: "";
+  display: table;
+}
+.wrap:after {
   clear: both;
 }
 
@@ -647,7 +654,7 @@ body {
 }
 
 /* card */
-.card {
+.card li {
   position: relative;
 }
 .card__cat {
@@ -778,7 +785,7 @@ body {
     margin-right: 2.77778%;
   }
 }
-.tile__list .card {
+.tile__list li {
   -susy-span: 4;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -788,12 +795,10 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   -susy-nested: (span: 4);
-}
-.tile__list .card:nth-child(3) ~ .card {
-  margin-top: 40px;
+  margin-bottom: 40px;
 }
 @media only screen and (max-width: 959px) {
-  .tile__list .card {
+  .tile__list li {
     -susy-gallery: 6;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -803,20 +808,20 @@ body {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .tile__list .card:nth-child(2n + 1) {
+  .tile__list li:nth-child(2n + 1) {
     margin-left: 0;
     margin-right: -100%;
     clear: both;
     -susy-first: (span: 6, location: 1);
   }
-  .tile__list .card:nth-child(2n + 2) {
+  .tile__list li:nth-child(2n + 2) {
     margin-left: 50%;
     margin-right: -100%;
     clear: none;
   }
 }
 @media only screen and (max-width: 479px) {
-  .tile__list .card {
+  .tile__list li {
     -susy-gallery: 12;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -826,7 +831,7 @@ body {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .tile__list .card:nth-child(1n + 1) {
+  .tile__list li:nth-child(1n + 1) {
     margin-left: 0;
     margin-right: -100%;
     clear: none;
@@ -838,7 +843,6 @@ body {
 
 /* Load More */
 .load-more {
-  margin-top: 40px;
   margin-bottom: 60px;
   text-align: center;
 }
@@ -879,18 +883,12 @@ body {
  * Post page
  * ========================================================================== */
 .post {
+  overflow: hidden;
   background-color: #fff;
   margin-right: 410px;
-  -susy-gutters: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 1/2, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true));
+  -susy-gutters: (container: 1190px, gutter-position: inside-static, column-width: 80px, columns: 12, gutters: 0.5, debug: (image: show, color: rgba(203, 48, 48, 0.25), inspect: true));
   padding-left: 20px;
   padding-right: 20px;
-}
-.post:before, .post:after {
-  content: "";
-  display: table;
-}
-.post:after {
-  clear: both;
 }
 .post img {
   max-width: 100%;
@@ -929,39 +927,32 @@ body {
   float: right;
   width: 370px;
 }
-.aside__list .card + .card {
+.aside__list li + li {
   margin-top: 20px;
 }
 
-/* ==========================================================================
- * Other Styles
- * ========================================================================== */
-.title {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-family: "Open Sans", Arial, sans-serif;
-  font-weight: 300;
-  font-size: 2.625em;
-  line-height: 1.35714;
-  color: #fff;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
+.trend__list {
+  -susy-pre: -10px;
+  margin-left: -10px;
 }
-@media only screen and (max-width: 1023px) {
-  .title {
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
+.trend__list li {
+  -susy-span: 220px (gutter-override: 20px);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 220px;
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-.title.title-cat {
-  margin-top: 20px;
-  margin-left: 252px;
-  text-align: left;
-  font-family: "Open Sans", Arial, sans-serif;
-  font-weight: 800;
+.trend__list .card__in-img {
+  position: relative;
+}
+.trend__list .card__in-img:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 100%;
 }
 
 /* ==========================================================================
@@ -994,6 +985,37 @@ body {
 }
 .privacy p + p {
   margin-top: 20px;
+}
+
+/* ==========================================================================
+ * Other Styles
+ * ========================================================================== */
+.title {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 2.625em;
+  line-height: 1.35714;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+}
+@media only screen and (max-width: 1023px) {
+  .title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+.title.title-cat {
+  margin-top: 20px;
+  margin-left: 252px;
+  text-align: left;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 800;
 }
 
 
